@@ -32,12 +32,6 @@
           $uploadOk = 0;
         }
 
-        // Check if file already exists
-        if (file_exists($target_file)) {
-          $error_msg .= "Sorry, file already exists. <br>";
-          $uploadOk = 0;
-        }
-
         // Check file size
         if ($_FILES["image"]["size"] > 500000) {
           $error_msg .= "Sorry, your file is too large. <br>";
@@ -54,6 +48,12 @@
         if ($uploadOk == 0) {
           $error_msg .= "Sorry, your file was not uploaded. <br>";
         } else {
+          // Check if file already exists
+          if (file_exists($target_file)) {
+            // delete old image
+            unlink($target_file);
+          }
+          
           if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
             $error_msg = "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
           } else {
