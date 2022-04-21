@@ -24,31 +24,30 @@
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
-        // echo json_encode($file);
+        $error_msg = '';
     
         // Check if image file is a actual image or fake image
         $check = getimagesize($_FILES["image"]["tmp_name"]);
         if($check == false) {
-          echo "File is not an image.";
+          $error_msg .= "File is not an image. <br>";
           $uploadOk = 0;
         }
 
         // Check file size
         if ($_FILES["image"]["size"] > 500000) {
-          echo "Sorry, your file is too large.";
+          $error_msg .= "Sorry, your file is too large. <br>";
           $uploadOk = 0;
         }
 
         // Allow certain file formats
         if($imageFileType != "jpg" || $imageFileType != "png" || $imageFileType != "jpeg" || $imageFileType != "gif" || $imageFileType != "webp" ) {
-          echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+          $error_msg .= "Sorry, only JPG, JPEG, PNG, GIF & WEBP files are allowed. <br>";
           $uploadOk = 0;
         }
 
         // Check if $uploadOk is set to 0 by an error
         if ($uploadOk == 0) {
-          echo "Sorry, your file was not uploaded.";
+          $error_msg .= "Sorry, your file was not uploaded. <br>";
         } else {
           // Check if file already exists
           if (file_exists($target_file)) {
@@ -57,9 +56,9 @@
           }
 
           if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-            echo "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
+            $error_msg = "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
           } else {
-            echo "Sorry, there was an error uploading your file.";
+            $error_msg .= "Sorry, there was an error uploading your file. <br>";
           }
         }
 
@@ -76,7 +75,7 @@
         
       if ($updateQuery) {
         echo "Record updated successfully";
-        header("Location:"  . ADMIN_ROOT . "/pages/products/single.php?id=" . $product_id);
+        header("Location:"  . ADMIN_ROOT . "/pages/products/single.php?id=" . $product_id . "&error_msg=" . $error_msg);
         die();
       } else {
         echo "Error: " . $insert . "<br>" . mysqli_error($link);
