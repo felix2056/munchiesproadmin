@@ -85,11 +85,10 @@
   }
 
   $sql = "SELECT * FROM settings WHERE id = 1";
-  
   $result = mysqli_query($link, $sql);
 ?>
 
-<?php while($single = mysqli_fetch_array($result)) : ?>
+<?php while($setting = mysqli_fetch_array($result)) : ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -111,8 +110,6 @@
     </div><!-- /.container-fluid -->
   </section>
 
-  <?php if ($result && mysqli_num_rows($result) > 0) : ?>
-  <?php while($setting = mysqli_fetch_array($result)) : ?>
   <!-- Main content -->
   <section class="content">
     <form action="" method="post">
