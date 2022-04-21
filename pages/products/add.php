@@ -62,7 +62,7 @@
           }
         }
 
-        $image = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . '://' . $_SERVER['SERVER_NAME'] . '/uploads/' . basename($_FILES["image"]["name"]);
+        $image = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . '://' . $_SERVER['SERVER_NAME'] . '/admin/uploads/' . basename($_FILES["image"]["name"]);
       }
 
       $insert = "INSERT INTO products (`title`, `price`, `featured_image`, `body`, `category_id`) VALUES ('$title', '$price', '$image', '$body', '$category_id')";
