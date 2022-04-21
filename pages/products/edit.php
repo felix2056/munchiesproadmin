@@ -15,6 +15,7 @@
     $price = mysqli_real_escape_string($link, $_POST['price']);
     $body = mysqli_real_escape_string($link, $_POST['body']) ?? '';
     $category_id = mysqli_real_escape_string($link, $_POST['category_id']);
+    $msg = 'No image uploaded';
       
     if (!empty($title) && !empty($price) && !empty($category_id)) {
       // upload image to server
@@ -24,30 +25,30 @@
         $target_file = $target_dir . basename($_FILES["image"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-        $error_msg = '';
+        $msg = '';
     
         // Check if image file is a actual image or fake image
         $check = getimagesize($_FILES["image"]["tmp_name"]);
         if($check == false) {
-          $error_msg .= "File is not an image. <br>";
+          $msg .= "File is not an image. <br>";
           $uploadOk = 0;
         }
 
         // Check file size
         if ($_FILES["image"]["size"] > 500000) {
-          $error_msg .= "Sorry, your file is too large. <br>";
+          $msg .= "Sorry, your file is too large. <br>";
           $uploadOk = 0;
         }
 
         // Allow certain file formats
         // if($imageFileType != "jpg" || $imageFileType != "png" || $imageFileType != "jpeg" || $imageFileType != "gif" || $imageFileType != "webp" ) {
-        //   $error_msg .= "Sorry, only JPG, JPEG, PNG, GIF & WEBP files are allowed. <br>";
+        //   $msg .= "Sorry, only JPG, JPEG, PNG, GIF & WEBP files are allowed. <br>";
         //   $uploadOk = 0;
         // }
 
         // Check if $uploadOk is set to 0 by an error
         if ($uploadOk == 0) {
-          $error_msg .= "Sorry, your file was not uploaded. <br>";
+          $msg .= "Sorry, your file was not uploaded. <br>";
         } else {
           // Check if file already exists
           if (file_exists($target_file)) {
@@ -56,9 +57,9 @@
           }
 
           if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-            $error_msg = "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
+            $msg = "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
           } else {
-            $error_msg .= "Sorry, there was an error uploading your file. <br>";
+            $msg .= "Sorry, there was an error uploading your file. <br>";
           }
         }
 
@@ -75,7 +76,7 @@
         
       if ($updateQuery) {
         echo "Record updated successfully";
-        header("Location:"  . ADMIN_ROOT . "/pages/products/single.php?id=" . $product_id . "&error_msg=" . $error_msg);
+        header("Location:"  . ADMIN_ROOT . "/pages/products/single.php?id=" . $product_id . "&msg=" . $msg);
         die();
       } else {
         echo "Error: " . $insert . "<br>" . mysqli_error($link);
