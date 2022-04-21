@@ -6,7 +6,7 @@ define("DB_USER", 'u749386387_munchiesprouse'); //root
 define("DB_PASS", 'Munchiespropa$$123'); //
 define("DB_NAME", 'u749386387_munchiespro'); //root
 
-define("ADMIN_ROOT", '/admin'); // change to your directory ('/admin')
+define("ADMIN_ROOT", '/admin');; // change to your directory ('/admin')
 
 // Open up a new MySQLi connection to the MySQL database
 $connect = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME); // Change these to your own DB credentials
@@ -21,7 +21,7 @@ if($connect === false){
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin Panel | Log in</title>
+  <title>Munchies Pro Admin Panel | Log in</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
