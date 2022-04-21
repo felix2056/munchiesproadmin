@@ -147,10 +147,10 @@
                   <!-- /.form-group -->
                   <div class="form-group">
                     <label for="inputDesc">Site Contact</label>
-                    <input type="text" id="inputTitle" class="form-control" name="site_email"
-                      value="<?= $setting['site_email'] ?>">
+                    <input type="email" id="inputTitle" class="form-control" name="site_email"
+                      value="<?= $setting['site_email'] ?>" placeholder="E-mail address">
                       <input type="text" id="inputTitle" class="form-control" name="site_phone"
-                      value="<?= $setting['site_phone'] ?>" minlength="5" maxlength="100">
+                      value="<?= $setting['site_phone'] ?>" minlength="5" maxlength="100" placeholder="Phone number">
                   </div>
                   <!-- /.form-group -->
                   <div class="form-group">
