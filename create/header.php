@@ -2,9 +2,9 @@
 session_start();
 
 define("DB_HOST", 'localhost'); //localhost
-define("DB_USER", 'root'); //root
-define("DB_PASS", ''); //
-define("DB_NAME", 'admin_cls'); //root
+define("DB_USER", 'u749386387_munchiesprouse'); //root
+define("DB_PASS", 'Munchiespropa$$123'); //
+define("DB_NAME", 'u749386387_munchiespro'); //root
 
 define("ADMIN_ROOT", '/admin'); // change to your directory ('/admin')
 
