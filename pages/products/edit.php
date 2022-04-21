@@ -142,6 +142,7 @@
                       <option value="<?= $category['id'] ?>" <?= $category['id'] == $single['category_id'] ? 'selected' : '' ?>><?= $category['title'] ?></option>
                     <?php endwhile; ?>
                   </select>
+                </div>
 
                 <div class="form-group">
                   <textarea id="compose-textarea" name="body" class="form-control" style="height: 300px"><?= $single['body'] ?></textarea>
