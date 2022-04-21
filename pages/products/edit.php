@@ -133,19 +133,20 @@
                 </div>
 
                 <div class="form-group">
-                  <select class="form-control" name="category_id">
-                    <?php
-                      $sql = "SELECT * FROM categories";
-                      $categories = mysqli_query($link, $sql);
-                    ?>
-                    <?php while($category = mysqli_fetch_array($categories)) : ?>
-                      <option value="<?= $category['id'] ?>" <?= $category['id'] == $single['category_id'] ? 'selected' : '' ?>><?= $category['title'] ?></option>
-                    <?php endwhile; ?>
-                  </select>
+                  <textarea id="compose-textarea" name="body" class="form-control" style="height: 300px"><?= $single['body'] ?></textarea>
                 </div>
 
                 <div class="form-group">
-                  <textarea id="compose-textarea" name="body" class="form-control" style="height: 300px"><?= $single['body'] ?></textarea>
+                  <select class="form-control" name="category_id">
+                    <option value="">Select Category</option>
+                    <?php
+                      $query = "SELECT * FROM categories";
+                      $result = mysqli_query($link, $query);
+                      while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<option value='{$row['id']}' " . ($row['id'] == $single['category_id'] ? 'selected' : '') . ">{$row['title']}</option>";
+                      }
+                    ?>
+                  </select>
                 </div>
 
                 <div class="form-group">
