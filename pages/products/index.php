@@ -79,7 +79,7 @@
                         <?php $index++ ?>
                           <tr>
                             <form action="" method="POST" id="form-<?= $product['id'] ?>" style="display: none;">
-                              <input type="hidden" name="page_id" value="<?= $product['id'] ?>">
+                              <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
                             </form>
 
                             <td class="mailbox-star">
