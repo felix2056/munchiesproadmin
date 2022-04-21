@@ -129,13 +129,13 @@
 <!-- /.content-wrapper -->
 
 <script>
-    function deletePage(product_id, product_title) {
-        var confirm = window.confirm("Are you sure you want to delete " + product_title + '?');
-        if (confirm == true) {
-            form = document.getElementById('form-' + product_id);
-            form.submit();
-        }
+  function deleteProduct(product_id, product_title) {
+    var confirm = window.confirm("Are you sure you want to delete " + product_title + '?');
+    if (confirm == true) {
+      form = document.getElementById('form-' + product_id);
+      form.submit();
     }
+  }
 </script>
 
 <?php include_once('../../includes/footer.php'); ?>
