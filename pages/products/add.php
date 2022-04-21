@@ -11,11 +11,11 @@
   if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $title = mysqli_real_escape_string($link, $_POST['title']);
     $price = mysqli_real_escape_string($link, $_POST['price']);
-    $body = mysqli_real_escape_string($link, $_POST['body']);
+    $body = mysqli_real_escape_string($link, $_POST['body']) ?? '';
     $category_id = mysqli_real_escape_string($link, $_POST['category_id']);
     
 
-    if (!empty($title) && !empty($price) && !empty($body) && !empty($category_id)) {
+    if (!empty($title) && !empty($price) && !empty($category_id)) {
       // upload image to server
       $image = NULL;
       if(!empty($_FILES['image']['name']) && $_FILES['image']['error'] == 0) {
