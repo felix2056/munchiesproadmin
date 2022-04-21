@@ -42,10 +42,10 @@
         }
 
         // Allow certain file formats
-        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
-          echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-          $uploadOk = 0;
-        }
+        // if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+        //   echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        //   $uploadOk = 0;
+        // }
 
         // Check if $uploadOk is set to 0 by an error
         if ($uploadOk == 0) {
@@ -156,23 +156,24 @@
                   <div class="form-group">
                     <label for="inputLogo">Site Address</label>
                     <input type="url" id="inputLogo" class="form-control" name="site_address"
-                      value="<?= $site['site_address'] ?>">
+                      value="<?= $setting['site_address'] ?>">
                   </div>
                   <!-- /.form-group -->
                   <div class="form-group">
                     <label for="inputLogo">Site Currency</label>
                     <select class="form-control select2" name="site_currency" style="width: 100%;">
                       <option value="USD" <?= $setting['site_currency'] == 'USD' ? 'selected' : '' ?>>USD</option>
-                      <option value="EUR" <?= $setting['site_currency'] == 'EUR' ? 'selected' : '' ?>>EUR</option>
-                      <option value="GBP" <?= $setting['site_currency'] == 'GBP' ? 'selected' : '' ?>>GBP</option>
-                      <option value="AUD" <?= $setting['site_currency'] == 'AUD' ? 'selected' : '' ?>>AUD</option>
-                      <option value="CAD" <?= $setting['site_currency'] == 'CAD' ? 'selected' : '' ?>>CAD</option>
+                      <option disabled value="EUR" <?= $setting['site_currency'] == 'EUR' ? 'selected' : '' ?>>EUR</option>
+                      <option disabled value="GBP" <?= $setting['site_currency'] == 'GBP' ? 'selected' : '' ?>>GBP</option>
+                      <option disabled value="AUD" <?= $setting['site_currency'] == 'AUD' ? 'selected' : '' ?>>AUD</option>
+                      <option disabled value="CAD" <?= $setting['site_currency'] == 'CAD' ? 'selected' : '' ?>>CAD</option>
+                    </select>
                   </div>
                   <!-- /.form-group -->
                   <div class="form-group">
                     <label for="inputLogo">Site Keywords (comma separated)</label>
-                    <input type="url" id="inputLogo" class="form-control" name="site_keywords"
-                      value="<?= $site['site_keywords'] ?>">
+                    <input type="text" id="inputLogo" class="form-control" name="site_keywords"
+                      value="<?= $setting['site_keywords'] ?>" placeholder="comma separated keywords">
                   </div>
                   <!-- /.form-group -->
                   <div class="form-group">
