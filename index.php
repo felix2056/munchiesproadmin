@@ -228,7 +228,7 @@
                     <?php $index++ ?>
                     <td><?= $index ?></td>
                     <td><?= $product['title'] ?></td>
-                    <td><?= $product['price'] ?></td>
+                    <td>$<?= $product['price'] ?></td>
                     <td><?= $product['product_category'] ?></td>
                     <td><img src="<?= $product['featured_image'] ?>" alt="<?= $product['title'] ?>" class="img-fluid" width="100"></td>
                     <td><?= date('F d, Y', strtotime($product['created_at'])) ?></td>

@@ -89,7 +89,7 @@
                               <a href="<?= ADMIN_ROOT ?>/pages/products/single.php?id=<?= $product['id'] ?>"><?= $product['title'] ?></a>
                             </td>
                             <td class="mailbox-name">
-                              <?= $product['price'] ?>
+                              $<?= $product['price'] ?>
                             </td>
                             <td class="mailbox-name">
                               <?= $product['product_category'] ?>
