@@ -71,7 +71,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="<?= ADMIN_ROOT ?>/pages/products/settings" class="nav-link">
+          <a href="<?= ADMIN_ROOT ?>/pages/settings" class="nav-link">
             <i class="nav-icon fa fa-book"></i>
             <p>
               Settings
