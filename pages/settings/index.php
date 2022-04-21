@@ -207,8 +207,6 @@
     </form>
   </section>
   <!-- /.content -->
-  <?php endwhile; ?>
-  <?php endif; ?>
 </div>
 <!-- /.content-wrapper -->
 <?php endwhile; ?>
