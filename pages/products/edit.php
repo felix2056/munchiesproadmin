@@ -67,7 +67,7 @@
       }
 
       if(!empty($image)) {
-        $update = "UPDATE products SET title = '$title', price = '$price', body = '$body', image = '$image', category_id = '$category_id' WHERE id = '$product_id'";
+        $update = "UPDATE products SET title = '$title', price = '$price', body = '$body', featured_image = '$image', category_id = '$category_id' WHERE id = '$product_id'";
       } else {
         $update = "UPDATE products SET title = '$title', price = '$price', body = '$body', category_id = '$category_id' WHERE id = '$product_id'";
       }
