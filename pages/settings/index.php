@@ -155,7 +155,7 @@
                   <!-- /.form-group -->
                   <div class="form-group">
                     <label for="inputLogo">Site Address</label>
-                    <input type="url" id="inputLogo" class="form-control" name="site_address"
+                    <input type="text" id="inputLogo" class="form-control" name="site_address"
                       value="<?= $setting['site_address'] ?>">
                   </div>
                   <!-- /.form-group -->
@@ -193,16 +193,16 @@
               <!-- /.row -->
             </div>
             <!-- /.card-body -->
+
+            <div class="card-footer">
+              <div class="float-right">
+                <input type="submit" value="Save Changes" class="btn btn-success">
+              </div>
+              <a href="#" onclick="window.back()" class="btn btn-secondary">Cancel</a>
+            </div>
           </div>
           <!-- /.card -->
           <!-- /.card -->
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-12">
-          <a href="#" onclick="window.back()" class="btn btn-secondary">Cancel</a>
-          <input type="submit" value="Save Changes" class="btn btn-success float-right">
         </div>
       </div>
     </form>
