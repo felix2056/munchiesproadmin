@@ -143,7 +143,7 @@
                       $query = "SELECT * FROM categories";
                       $result = mysqli_query($link, $query);
                       while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<option value='{$row['id']}' " . ($row['id'] == $single['category_id'] ? 'selected' : '') . ">{$row['title']}</option>";
+                        echo "<option value='{$row['id']}' " . ($row['id'] == $single['category_id'] ? 'selected' : '') . ">{$row['name']}</option>";
                       }
                     ?>
                   </select>
