@@ -119,7 +119,7 @@
             <div class="card-header">
               <h3 class="card-title">Edit <?= $single['title'] ?></h3>
             </div>
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
               <!-- /.card-header -->
               <div class="card-body">
                 <div class="form-group">
