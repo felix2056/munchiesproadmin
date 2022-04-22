@@ -74,7 +74,7 @@
           <div class="card card-primary card-outline">
             <div class="card-body box-profile">
               <div class="text-center">
-                <img class="profile-user-img img-fluid img-circle" src="<?= ADMIN_ROOT . $user['avatar'] ?>"
+                <img class="profile-user-img img-fluid img-circle" src="<?= ADMIN_ROOT . $single['avatar'] ?>"
                   alt="User profile picture">
               </div>
 
